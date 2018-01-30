@@ -1,0 +1,46 @@
+# Squarespace Robots Txt
+
+Sitemap: https://fulton-demo.squarespace.com/sitemap.xml
+User-agent: *
+Disallow: /config
+Disallow: /commerce/
+Disallow: /checkout$
+Disallow: /checkout/
+Disallow: /cart$
+Disallow: /cart/
+Disallow: /account$
+Disallow: /account/
+Disallow: /api/
+Disallow: /static/
+Disallow:/*?author=*
+Disallow:/*&author=*
+Disallow:/*?tag=*
+Disallow:/*&tag=*
+Disallow:/*?category=*
+Disallow:/*&category=*
+Disallow:/*?month=*
+Disallow:/*&month=*
+Disallow:/*?view=*
+Disallow:/*&view=*
+Disallow:/*?format=json
+Disallow:/*&format=json
+Disallow:/*?format=page-context
+Disallow:/*&format=page-context
+Disallow:/*?format=main-content
+Disallow:/*&format=main-content
+Disallow:/*?format=json-pretty
+Disallow:/*&format=json-pretty
+Disallow:/*?format=ical
+Disallow:/*&format=ical
+Disallow:/*?reversePaginate=*
+Disallow:/*&reversePaginate=*
+
+
+https://static.squarespace.com/universal/scripts-compressed/common-d2a0a6b329c85d26b4fe-min.js" 
+https://static.squarespace.com/universal/scripts-compressed/commerce-4f5742a537c0632bcb21-min.js" 
+https://static.squarespace.com/universal/styles-compressed/commerce-5d92d492f6510be01a117febeac9a310-min.css"/
+https://static.squarespace.com/universal/scripts-compressed/dialog-9279874f56fbf636b54a-min.js" 
+https://static.squarespace.com/universal/styles-compressed/dialog-aba41cb3c0853ecd2e2fb2303806d950-min.css"/
+https://static.squarespace.com/universal/scripts-compressed/signup-76956cedc9c89af7e676-min.js" 
+https://static.squarespace.com/universal/styles-compressed/signup-58202303fbf527fee260785d81ccf8b2-min.css"/
+

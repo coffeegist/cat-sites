@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="/storefront/xmlrpc.php">
+
+<title>[cat-site-name]</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="[cat-site-name] &raquo; Feed" href="/storefront/feed/" />
+<link rel="alternate" type="application/rss+xml" title="[cat-site-name] &raquo; Comments Feed" href="/storefront/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="[cat-site-name] &raquo; Hoodies Category Feed" href="/storefront/product-category/clothing/hoodies/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/demo.woothemes.com\/storefront\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0' href='https://demo.woothemes.com/storefront/_static/??-eJyNkOEOgjAMhF/IWTAafhmfZY4CS+i6rFX07YVFEwwY+dVLevnuWhiicRwUg0Lsb60PAgOzYyJMDk1MXN+cGk+2RdP0PkZMYEVQBZwIiD573I9qB39Q5B/GhtqQVdd9wDJnUSDTpIyoNyFHEVm84ipucDND7imbqHebvFXPwcgwdUXJvWPHyl8BK+tFgHZIOL2JE+bbfnxs6XsHyTjhagXBj94ccKFzeSoOVVkdi+IFVbSr+w==' type='text/css' media='all' />
+<style id='storefront-style-inline-css' type='text/css'>
+
+			.plus,
+			.minus {
+				background: none !important;
+			}
+
+			.sd-fixed-width .site {
+				background-color:#fcfcfc;
+			}
+
+			.sticky-wrapper,
+			.sd-sticky-navigation,
+			.sd-sticky-navigation:before,
+			.sd-sticky-navigation:after {
+				background-color:#2c2d33;
+			}
+
+
+			.main-navigation ul li a,
+			.site-title a,
+			ul.menu li a,
+			.site-branding h1 a,
+			.site-footer .storefront-handheld-footer-bar a:not(.button),
+			button.menu-toggle,
+			button.menu-toggle:hover {
+				color: #d5d9db;
+			}
+
+			button.menu-toggle,
+			button.menu-toggle:hover {
+				border-color: #d5d9db;
+			}
+
+			.main-navigation ul li a:hover,
+			.main-navigation ul li:hover > a,
+			.site-title a:hover,
+			a.cart-contents:hover,
+			.site-header-cart .widget_shopping_cart a:hover,
+			.site-header-cart:hover > li > a,
+			ul.menu li.current-menu-item > a {
+				color: #ffffff;
+			}
+
+			table th {
+				background-color: #f8f8f8;
+			}
+
+			table tbody td {
+				background-color: #fdfdfd;
+			}
+
+			table tbody tr:nth-child(2n) td {
+				background-color: #fbfbfb;
+			}
+
+			.site-header,
+			.secondary-navigation ul ul,
+			.main-navigation ul.menu > li.menu-item-has-children:after,
+			.secondary-navigation ul.menu ul,
+			.storefront-handheld-footer-bar,
+			.storefront-handheld-footer-bar ul li > a,
+			.storefront-handheld-footer-bar ul li.search .site-search,
+			button.menu-toggle,
+			button.menu-toggle:hover {
+				background-color: #2c2d33;
+			}
+
+			p.site-description,
+			.site-header,
+			.storefront-handheld-footer-bar {
+				color: #9aa0a7;
+			}
+
+			.storefront-handheld-footer-bar ul li.cart .count,
+			button.menu-toggle:after,
+			button.menu-toggle:before,
+			button.menu-toggle span:before {
+				background-color: #d5d9db;
+			}
+
+			.storefront-handheld-footer-bar ul li.cart .count {
+				color: #2c2d33;
+			}
+
+			.storefront-handheld-footer-bar ul li.cart .count {
+				border-color: #2c2d33;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: #484c51;
+			}
+
+			.widget h1 {
+				border-bottom-color: #484c51;
+			}
+
+			body,
+			.secondary-navigation a,
+			.onsale,
+			.pagination .page-numbers li .page-numbers:not(.current), .woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+				color: #60646c;
+			}
+
+			.widget-area .widget a,
+			.hentry .entry-header .posted-on a,
+			.hentry .entry-header .byline a {
+				color: #92969e;
+			}
+
+			a  {
+				color: #96588a;
+			}
+
+			a:focus,
+			.button:focus,
+			.button.alt:focus,
+			.button.added_to_cart:focus,
+			.button.wc-forward:focus,
+			button:focus,
+			input[type="button"]:focus,
+			input[type="reset"]:focus,
+			input[type="submit"]:focus {
+				outline-color: #96588a;
+			}
+
+			button, input[type="button"], input[type="reset"], input[type="submit"], .button, .added_to_cart, .widget-area .widget a.button, .site-header-cart .widget_shopping_cart a.button {
+				background-color: #96588a;
+				border-color: #96588a;
+				color: #ffffff;
+			}
+
+			button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover, .added_to_cart:hover, .widget-area .widget a.button:hover, .site-header-cart .widget_shopping_cart a.button:hover {
+				background-color: #7d3f71;
+				border-color: #7d3f71;
+				color: #ffffff;
+			}
+
+			button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .added_to_cart.alt, .widget-area .widget a.button.alt, .added_to_cart, .pagination .page-numbers li .page-numbers.current, .woocommerce-pagination .page-numbers li .page-numbers.current {
+				background-color: #2c2d33;
+				border-color: #2c2d33;
+				color: #ffffff;
+			}
+
+			button.alt:hover, input[type="button"].alt:hover, input[type="reset"].alt:hover, input[type="submit"].alt:hover, .button.alt:hover, .added_to_cart.alt:hover, .widget-area .widget a.button.alt:hover, .added_to_cart:hover {
+				background-color: #13141a;
+				border-color: #13141a;
+				color: #ffffff;
+			}
+
+			#comments .comment-list .comment-content .comment-text {
+				background-color: #f8f8f8;
+			}
+
+			.site-footer {
+				background-color: #f0f0f0;
+				color: #61656b;
+			}
+
+			.site-footer a:not(.button) {
+				color: #2c2d33;
+			}
+
+			.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
+				color: #494c50;
+			}
+
+			#order_review,
+			#payment .payment_methods li .payment_box {
+				background-color: #ffffff;
+			}
+
+			#payment .payment_methods li {
+				background-color: #fafafa;
+			}
+
+			#payment .payment_methods li:hover {
+				background-color: #f5f5f5;
+			}
+
+			@media screen and ( min-width: 768px ) {
+				.secondary-navigation ul.menu a:hover {
+					color: #b3b9c0;
+				}
+
+				.secondary-navigation ul.menu a {
+					color: #9aa0a7;
+				}
+
+				.site-header-cart .widget_shopping_cart,
+				.main-navigation ul.menu ul.sub-menu,
+				.main-navigation ul.nav-menu ul.children {
+					background-color: #24252b;
+				}
+			}
+</style>
+<link rel='stylesheet' id='storefront-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,700,900&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2' href='https://demo.woothemes.com/storefront/_static/??-eJytkltOxDAMRTeEiWCGCj4Qa3FTTxvIS7EzbXdPQB0RkAaV0p84snSPrx9qjKCDF/KiZCBHrFhColMqSYXMJCVTonoliajfLvFWM9+oSh1t7o1ndSKUnIihnWEMYYEupCJSFueQ5ar+qzy0NvSgc8k4w5RqCMtsaQ2jIza931sM92vkERNaixMMlMImA2WAOjhHSdOfBvH7Kitq/f8HhaYiYBOK+zMmg1K+wCOKHoj34ZZcDGyEIKbQZS07cdvsO7uXSWcmQN+B++j86oLrrS7NwGKjXu2oIbbwWZt8t+rgktHG9yDY/mCtvriLn80nm+hsaNxW3FGP5fH5m7yewIt7vjs+NU3z+HA4vAOLNtXY' type='text/css' media='all' />
+<style id='sph-styles-inline-css' type='text/css'>
+
+		.sph-hero a:not(.button) {
+			color: #ffffff;
+		}
+
+		.overlay.animated h1:after {
+			color: #ffffff;
+		}
+
+		.overlay.animated span:before {
+			background-color: #96588a;
+		}
+</style>
+<style id='storefront-woocommerce-style-inline-css' type='text/css'>
+
+			a.cart-contents,
+			.site-header-cart .widget_shopping_cart a {
+				color: #d5d9db;
+			}
+
+			table.cart td.product-remove,
+			table.cart td.actions {
+				border-top-color: #ffffff;
+			}
+
+			.woocommerce-tabs ul.tabs li.active a,
+			ul.products li.product .price,
+			.onsale,
+			.widget_search form:before,
+			.widget_product_search form:before {
+				color: #60646c;
+			}
+
+			.woocommerce-breadcrumb a,
+			a.woocommerce-review-link,
+			.product_meta a {
+				color: #92969e;
+			}
+
+			.onsale {
+				border-color: #60646c;
+			}
+
+			.star-rating span:before,
+			.quantity .plus, .quantity .minus,
+			p.stars a:hover:after,
+			p.stars a:after,
+			.star-rating span:before,
+			#payment .payment_methods li input[type=radio]:first-child:checked+label:before {
+				color: #96588a;
+			}
+
+			.widget_price_filter .ui-slider .ui-slider-range,
+			.widget_price_filter .ui-slider .ui-slider-handle {
+				background-color: #96588a;
+			}
+
+			.woocommerce-breadcrumb,
+			#reviews .commentlist li .comment_container {
+				background-color: #f8f8f8;
+			}
+
+			.order_details {
+				background-color: #f8f8f8;
+			}
+
+			.order_details li {
+				border-bottom: 1px dotted #e3e3e3;
+			}
+
+			.order_details:before,
+			.order_details:after {
+				background: -webkit-linear-gradient(transparent 0,transparent 0),-webkit-linear-gradient(135deg,#f8f8f8 33.33%,transparent 33.33%),-webkit-linear-gradient(45deg,#f8f8f8 33.33%,transparent 33.33%)
+			}
+
+			@media screen and ( min-width: 768px ) {
+				.site-header-cart .widget_shopping_cart,
+				.site-header .product_list_widget li .quantity {
+					color: #9aa0a7;
+				}
+			}
+
+			.woocommerce-message {
+				background-color: #0f834d !important;
+				color: #ffffff !important;
+			}
+
+			.woocommerce-message a,
+			.woocommerce-message a:hover,
+			.woocommerce-message .button,
+			.woocommerce-message .button:hover {
+				color: #ffffff !important;
+			}
+
+			.woocommerce-info {
+				background-color: #3D9CD2 !important;
+				color: #ffffff !important;
+			}
+
+			.woocommerce-info a,
+			.woocommerce-info a:hover,
+			.woocommerce-info .button,
+			.woocommerce-info .button:hover {
+				color: #ffffff !important;
+			}
+
+			.woocommerce-error {
+				background-color: #e2401c !important;
+				color: #ffffff !important;
+			}
+
+			.woocommerce-error a,
+			.woocommerce-error a:hover,
+			.woocommerce-error .button,
+			.woocommerce-error .button:hover {
+				color: #ffffff !important;
+			}
+
+
+</style>
+<style id='spt-styles-inline-css' type='text/css'>
+
+		.storefront-pricing-column h2.column-title {
+			background-color: #2c2d33;
+			color: #ffffff;
+		}
+
+		.storefront-pricing-column.highlight h2.column-title {
+			background-color: #73aa25;
+			color: #ffffff;
+		}
+</style>
+<style id='sprh-styles-inline-css' type='text/css'>
+
+		.sprh-hero a:not(.button) {
+			color: #96588a;
+		}
+</style>
+<style id='sr-styles-inline-css' type='text/css'>
+
+		.style-2 .sr-review-content {
+			background-color: #ffffff;
+		}
+
+		.style-2 .sr-review-content:after {
+			border-top-color: #ffffff !important;
+		}
+
+		.star-rating span:before,
+		.star-rating:before {
+			color: #96588a;
+		}
+
+		.star-rating:before {
+			opacity: 0.25;
+		}
+
+		.sr-carousel .owl-prev:before, .sr-carousel .owl-next:before {
+			color: #96588a;
+		}
+
+		ul.product-reviews li.product-review.style-3 .inner {
+			background-color: rgba( 255, 255, 255,0.8 );
+		}
+</style>
+<style id='storefront-mega-menus-frontend-inline-css' type='text/css'>
+
+			.smm-mega-menu {
+				background-color: #2c2d33;
+			}
+
+			.main-navigation ul li.smm-active .smm-mega-menu a.button {
+				background-color: #96588a !important;
+				border-color: #96588a !important;
+				color: #ffffff !important;
+			}
+
+			.main-navigation ul li.smm-active .smm-mega-menu a.button:hover {
+				background-color: #7d3f71 !important;
+				border-color: #7d3f71 !important;
+				color: #ffffff !important;
+			}
+
+			.main-navigation ul li.smm-active .smm-mega-menu a.added_to_cart {
+				background-color: #2c2d33 !important;
+				border-color: #2c2d33 !important;
+				color: #ffffff !important;
+			}
+
+			.main-navigation ul li.smm-active .smm-mega-menu a.added_to_cart:hover {
+				background-color: #13141a !important;
+				border-color: #13141a !important;
+				color: #ffffff !important;
+			}
+
+			.main-navigation ul li.smm-active .widget h3.widget-title,
+			.main-navigation ul li.smm-active li ul.products li.product h3 {
+				color: #9aa0a7;
+			}
+
+			.main-navigation ul li.smm-active ul.sub-menu li a {
+				color: #d5d9db;
+			}
+</style>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_additional_variation_images_local = {"ajaxurl":"https:\/\/demo.woothemes.com\/storefront\/wp-admin\/admin-ajax.php","ajaxImageSwapNonce":"1c47c01d16","gallery_images_class":".product .images .flex-control-nav, .product .images .thumbnails","main_images_class":".woocommerce-product-gallery","lightbox_images":".product .images a.zoom","custom_swap":"","custom_original_swap":"","custom_reset_swap":"","bwc":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://demo.woothemes.com/storefront/_static/??-eJx9jc0KwjAQhF/IbRQMtAfxWZZkDRuym5ofS9/eWurFgzAwAzN8Y5YZWF3qnqqJm56dynrYEOvJ/BuAcCjYaBDW79hlbaTNzKkH1mqWnF0WoeII0HtunBUTvLAwfjKwYNjYWCu1/eK3gkfZmf64ucvtYs92tNM0XuMbLplIgA=='></script>
+<link rel='https://api.w.org/' href='https://demo.woothemes.com/storefront/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/storefront/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/storefront/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.8.2" />
+<meta name="generator" content="WooCommerce 3.2.1" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	</head>
+
+<body class="archive tax-product_cat term-hoodies term-10 woocommerce woocommerce-page woocommerce-demo-store right-sidebar woocommerce-active sbc-meta-left-2 sd-header-compact sd-typography-helvetica storefront-pricing-tables-active storefront-product-hero-active swc-shop-alignment-center">
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner" style="">
+		<div class="col-full">
+
+					<a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+				<div class="site-branding">
+			<div class="beta site-title"><a href="/storefront/" rel="home">[cat-site-name]</a></div><p class="site-description">Conference coming 2017</p>		</div>
+				    <nav class="secondary-navigation" role="navigation" aria-label="Secondary Navigation">
+			    <div class="menu-secondary-navigation-container"><ul id="menu-secondary-navigation" class="menu"><li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="/storefront/my-account/">My Account</a></li>
+</ul></div>		    </nav><!-- #site-navigation -->
+		    			<div class="site-search">
+				<div class="widget woocommerce widget_product_search"><form role="search" method="get" class="woocommerce-product-search" action="https://demo.woothemes.com/storefront/">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
+	<input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+	<input type="submit" value="Search" />
+	<input type="hidden" name="post_type" value="product" />
+</form>
+</div>			</div>
+		<div class="storefront-primary-navigation">		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>Menu</span></button>
+			<div class="primary-navigation"><ul id="menu-navigation" class="menu"><li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="/storefront/blog/">Blog</a></li>
+<li id="menu-item-7258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7258"><a href="/storefront/single-product/">Single Product Homepage Example</a></li>
+<li id="menu-item-5488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5488"><a href="/storefront/pricing-tables/">Pricing Tables</a></li>
+<li id="menu-item-6095" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6095"><a href="/storefront/reviews/">Reviews</a></li>
+</ul></div><div class="menu"><ul>
+<li ><a href="/storefront/">Home</a></li><li class="page_item page-item-103 "><a href="/storefront/blog/">Blog</a></li>
+<li class="page_item page-item-5"><a href="/storefront/cart/">Cart</a></li>
+<li class="page_item page-item-6"><a href="/storefront/checkout/">Checkout</a></li>
+<li class="page_item page-item-7"><a href="/storefront/my-account/">My Account</a></li>
+<li class="page_item page-item-5452"><a href="/storefront/pricing-tables/">Pricing Tables</a></li>
+<li class="page_item page-item-6094"><a href="/storefront/reviews/">Reviews</a></li>
+<li class="page_item page-item-2"><a href="/storefront/sample-page/">Sample Page</a></li>
+<li class="page_item page-item-8818"><a href="/storefront/setup/">Setup</a></li>
+<li class="page_item page-item-4 current_page_parent"><a href="/storefront/shop/">Shop</a></li>
+<li class="page_item page-item-7229"><a href="/storefront/single-product/">Single Product</a></li>
+</ul></div>
+		</nav><!-- #site-navigation -->
+				<ul id="site-header-cart" class="site-header-cart menu">
+			<li class="">
+							<a class="cart-contents" href="/storefront/cart/" title="View your shopping cart">
+				<span class="amount">&pound;0.00</span> <span class="count">0 items</span>
+			</a>
+					</li>
+			<li>
+				<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div>			</li>
+		</ul>
+		</div>
+		</div>
+	</header><!-- #masthead -->
+
+
+	<div id="content" class="site-content" tabindex="-1">
+		<div class="col-full">
+
+		<div class="woocommerce"></div>
+			<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+
+    <header class="woocommerce-products-header">
+
+
+			<h1 class="woocommerce-products-header__title page-title">Hoodies</h1>
+
+
+
+    </header>
+
+
+			<div class="storefront-sorting"><form class="woocommerce-ordering" method="get">
+	<select name="orderby" class="orderby">
+					<option value="popularity" >Sort by popularity</option>
+					<option value="rating" >Sort by average rating</option>
+					<option value="date"  selected='selected'>Sort by newness</option>
+					<option value="price" >Sort by price: low to high</option>
+					<option value="price-desc" >Sort by price: high to low</option>
+			</select>
+	</form>
+<p class="woocommerce-result-count">
+	Showing all 7 results</p>
+</div><div class="columns-3"><div class="columns-3">
+			<ul class="products">
+
+
+
+
+					<li class="post-6245 product type-product status-publish has-post-thumbnail product_cat-hoodies product_tag-checked first instock shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+	<a href="/storefront/product/checked-hoodie/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2015/07/checked-hoodie.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><h2 class="woocommerce-loop-product__title">Checked Hoodie</h2>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>42.00</span></span>
+</a><a rel="nofollow" href="/storefront/product/checked-hoodie/" data-quantity="1" data-product_id="6245" data-product_sku="" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-60 product type-product status-publish has-post-thumbnail product_cat-hoodies product_cat-t-shirts pif-has-gallery  instock shipping-taxable purchasable product-type-variable has-children">
+	<a href="/storefront/product/woo-logo-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_6_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_6_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_6_back" /><h2 class="woocommerce-loop-product__title">Woo Logo</h2><div class="star-rating"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>49.99</span></span>
+</a><a rel="nofollow" href="/storefront/product/woo-logo-2/" data-quantity="1" data-product_id="60" data-product_sku="HOOD01" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-56 product type-product status-publish has-post-thumbnail product_cat-hoodies product_cat-t-shirts pif-has-gallery last instock shipping-taxable purchasable product-type-variable has-children">
+	<a href="/storefront/product/ninja-silhouette-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_5_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_5_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_5_back" /><h2 class="woocommerce-loop-product__title">Ninja Silhouette</h2><div class="star-rating"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>34.99</span></span>
+</a><a rel="nofollow" href="/storefront/product/ninja-silhouette-2/" data-quantity="1" data-product_id="56" data-product_sku="HOOD02" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-53 product type-product status-publish has-post-thumbnail product_cat-hoodies product_cat-t-shirts pif-has-gallery first instock shipping-taxable purchasable product-type-variable has-children">
+	<a href="/storefront/product/happy-ninja-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_4_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_4_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_4_back" /><h2 class="woocommerce-loop-product__title">Happy Ninja</h2><div class="star-rating"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>35.00</span></span>
+</a><a rel="nofollow" href="/storefront/product/happy-ninja-2/" data-quantity="1" data-product_id="53" data-product_sku="HOOD03" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-50 product type-product status-publish has-post-thumbnail product_cat-hoodies pif-has-gallery  instock shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+	<a href="/storefront/product/patient-ninja/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_3_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_3_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_3_back" /><h2 class="woocommerce-loop-product__title">Patient Ninja</h2><div class="star-rating"><span style="width:93.4%">Rated <strong class="rating">4.67</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>35.00</span></span>
+</a><a rel="nofollow" href="/storefront/product/patient-ninja/" data-quantity="1" data-product_id="50" data-product_sku="HOOD05" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-47 product type-product status-publish has-post-thumbnail product_cat-hoodies pif-has-gallery last instock shipping-taxable purchasable product-type-variable has-children">
+	<a href="/storefront/product/woo-ninja-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_2_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_2_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_2_back" /><h2 class="woocommerce-loop-product__title">Woo Ninja</h2><div class="star-rating"><span style="width:90%">Rated <strong class="rating">4.50</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>35.00</span></span>
+</a><a rel="nofollow" href="/storefront/product/woo-ninja-2/" data-quantity="1" data-product_id="47" data-product_sku="HOOD04" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+
+					<li class="post-40 product type-product status-publish has-post-thumbnail product_cat-hoodies pif-has-gallery first instock shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+	<a href="/storefront/product/ship-your-idea-2/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="450" height="600" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_7_front.jpg?w=450&amp;h=600&amp;crop=1" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" /><img width="450" height="600" src="https://demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/hoodie_7_back.jpg?w=450&amp;h=600&amp;crop=1" class="secondary-image attachment-shop-catalog wp-post-image wp-post-image--secondary" alt="" title="hoodie_7_back" /><h2 class="woocommerce-loop-product__title">Ship Your Idea</h2><div class="star-rating"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div>
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>40.00</span> &ndash; <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>45.00</span></span>
+</a><a rel="nofollow" href="/storefront/product/ship-your-idea-2/" data-quantity="1" data-product_id="40" data-product_sku="HOOD06" class="button product_type_variable add_to_cart_button">Select options</a></li>
+
+
+			</ul>
+
+			</div><div class="storefront-sorting"><form class="woocommerce-ordering" method="get">
+	<select name="orderby" class="orderby">
+					<option value="popularity" >Sort by popularity</option>
+					<option value="rating" >Sort by average rating</option>
+					<option value="date"  selected='selected'>Sort by newness</option>
+					<option value="price" >Sort by price: low to high</option>
+					<option value="price-desc" >Sort by price: high to low</option>
+			</select>
+	</form>
+<p class="woocommerce-result-count">
+	Showing all 7 results</p>
+</div></div>
+
+				</main><!-- #main -->
+		</div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary">
+	<div id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart"><span class="gamma widget-title">Cart</span><div class="widget_shopping_cart_content"></div></div><div id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories"><span class="gamma widget-title">Product Categories</span><ul class="product-categories"><li class="cat-item cat-item-9 cat-parent current-cat-parent"><a href="/storefront/product-category/clothing/">Clothing</a><ul class='children'>
+<li class="cat-item cat-item-121"><a href="/storefront/product-category/clothing/bags/">Bags</a></li>
+<li class="cat-item cat-item-44"><a href="/storefront/product-category/clothing/blouses/">Blouses</a></li>
+<li class="cat-item cat-item-41"><a href="/storefront/product-category/clothing/dresses/">Dresses</a></li>
+<li class="cat-item cat-item-56"><a href="/storefront/product-category/clothing/footwear/">Footwear</a></li>
+<li class="cat-item cat-item-54"><a href="/storefront/product-category/clothing/hats/">Hats</a></li>
+<li class="cat-item cat-item-10 current-cat"><a href="/storefront/product-category/clothing/hoodies/">Hoodies</a></li>
+<li class="cat-item cat-item-55"><a href="/storefront/product-category/clothing/shirts/">Shirts</a></li>
+<li class="cat-item cat-item-47"><a href="/storefront/product-category/clothing/skirts/">Skirts</a></li>
+<li class="cat-item cat-item-14"><a href="/storefront/product-category/clothing/t-shirts/">T-shirts</a></li>
+<li class="cat-item cat-item-49"><a href="/storefront/product-category/clothing/trousers/">Trousers</a></li>
+</ul>
+</li>
+<li class="cat-item cat-item-69 cat-parent"><a href="/storefront/product-category/electronics/">Electronics</a><ul class='children'>
+<li class="cat-item cat-item-71 cat-parent"><a href="/storefront/product-category/electronics/cameras/">Cameras</a>	<ul class='children'>
+<li class="cat-item cat-item-114"><a href="/storefront/product-category/electronics/cameras/accessories/">Accessories</a></li>
+<li class="cat-item cat-item-112"><a href="/storefront/product-category/electronics/cameras/lenses/">Lenses</a></li>
+	</ul>
+</li>
+<li class="cat-item cat-item-99"><a href="/storefront/product-category/electronics/dvd-players/">DVD Players</a></li>
+<li class="cat-item cat-item-72"><a href="/storefront/product-category/electronics/headphones/">Headphones</a></li>
+<li class="cat-item cat-item-91"><a href="/storefront/product-category/electronics/mp3-players/">MP3 Players</a></li>
+<li class="cat-item cat-item-90"><a href="/storefront/product-category/electronics/radios/">Radios</a></li>
+<li class="cat-item cat-item-70"><a href="/storefront/product-category/electronics/televisions/">Televisions</a></li>
+</ul>
+</li>
+<li class="cat-item cat-item-65 cat-parent"><a href="/storefront/product-category/kitchen/">Kitchen</a><ul class='children'>
+<li class="cat-item cat-item-102"><a href="/storefront/product-category/kitchen/blenders/">Blenders</a></li>
+<li class="cat-item cat-item-103"><a href="/storefront/product-category/kitchen/colanders/">Colanders</a></li>
+<li class="cat-item cat-item-68"><a href="/storefront/product-category/kitchen/kettles/">Kettles</a></li>
+<li class="cat-item cat-item-101"><a href="/storefront/product-category/kitchen/knifes/">Knifes</a></li>
+<li class="cat-item cat-item-66"><a href="/storefront/product-category/kitchen/pots-pans/">Pots &amp; Pans</a></li>
+<li class="cat-item cat-item-67"><a href="/storefront/product-category/kitchen/toasters/">Toasters</a></li>
+</ul>
+</li>
+<li class="cat-item cat-item-11 cat-parent"><a href="/storefront/product-category/music/">Music</a><ul class='children'>
+<li class="cat-item cat-item-15"><a href="/storefront/product-category/music/albums/">Albums</a></li>
+<li class="cat-item cat-item-100"><a href="/storefront/product-category/music/mp3/">MP3</a></li>
+<li class="cat-item cat-item-13"><a href="/storefront/product-category/music/singles/">Singles</a></li>
+</ul>
+</li>
+<li class="cat-item cat-item-12"><a href="/storefront/product-category/posters/">Posters</a></li>
+<li class="cat-item cat-item-31"><a href="/storefront/product-category/scuba-gear/">Scuba gear</a></li>
+<li class="cat-item cat-item-45"><a href="/storefront/product-category/sweatshirts/">Sweatshirts</a></li>
+</ul></div><div id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter"><span class="gamma widget-title">Filter by price</span><form method="get" action="https://demo.woothemes.com/storefront/product-category/clothing/hoodies/">
+			<div class="price_slider_wrapper">
+				<div class="price_slider" style="display:none;"></div>
+				<div class="price_slider_amount">
+					<input type="text" id="min_price" name="min_price" value="34" data-min="34" placeholder="Min price" />
+					<input type="text" id="max_price" name="max_price" value="50" data-max="50" placeholder="Max price" />
+					<button type="submit" class="button">Filter</button>
+					<div class="price_label" style="display:none;">
+						Price: <span class="from"></span> &mdash; <span class="to"></span>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+		</form></div><div id="woocommerce_layered_nav-2" class="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav"><span class="gamma widget-title">Filter by color</span><ul class="woocommerce-widget-layered-nav-list"><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=black">Black</a> <span class="count">(2)</span></li><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=blue">Blue</a> <span class="count">(2)</span></li><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=grey">Grey</a> <span class="count">(1)</span></li><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=orange">Orange</a> <span class="count">(1)</span></li><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=pink">Pink</a> <span class="count">(1)</span></li><li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a href="/storefront/product-category/clothing/hoodies/?filter_color=white">White</a> <span class="count">(1)</span></li></ul></div><div id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://demo.woothemes.com/storefront/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<span class="gamma widget-title">Recent Posts</span>		<ul>
+					<li>
+				<a href="/storefront/2014/09/01/birds-in-flight-and-the-power-of-a-remote-working-team/">Birds In Flight And The Power Of A Remote Working Team</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/make-more-money-through-ecommerce-analytics-with-segment/">Make More Money through Ecommerce Analytics with Segment</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/lessons-learnt-planning-a-big-product-release/">Lessons learnt planning a big product release</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/so-you-want-to-be-a-dropshipper-picking-the-perfect-product/">So You Want to Be a Dropshipper: Picking the Perfect Product</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/create-a-custom-canvas-homepage-using-siteorigin-page-builder/">Create a custom Canvas homepage using SiteOrigin Page Builder</a>
+						</li>
+				</ul>
+		</div>		</div><!-- #secondary -->
+
+
+
+		</div><!-- .col-full -->
+	</div><!-- #content -->
+
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="col-full">
+
+							<div class="footer-widgets row-1 col-2 fix">
+							<div class="block footer-widget-1">
+										<div id="recent-posts-3" class="widget widget_recent_entries">		<span class="gamma widget-title">Recent Posts</span>		<ul>
+					<li>
+				<a href="/storefront/2014/09/01/birds-in-flight-and-the-power-of-a-remote-working-team/">Birds In Flight And The Power Of A Remote Working Team</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/make-more-money-through-ecommerce-analytics-with-segment/">Make More Money through Ecommerce Analytics with Segment</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/lessons-learnt-planning-a-big-product-release/">Lessons learnt planning a big product release</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/so-you-want-to-be-a-dropshipper-picking-the-perfect-product/">So You Want to Be a Dropshipper: Picking the Perfect Product</a>
+						</li>
+					<li>
+				<a href="/storefront/2014/09/01/create-a-custom-canvas-homepage-using-siteorigin-page-builder/">Create a custom Canvas homepage using SiteOrigin Page Builder</a>
+						</li>
+				</ul>
+		</div>									</div>
+							<div class="block footer-widget-2">
+								<div id="woocommerce_top_rated_products-2" class="widget woocommerce widget_top_rated_products"><span class="gamma widget-title">Top Rated Products</span><ul class="product_list_widget">
+<li>
+	<a href="/storefront/product/woo-album-4/">
+		<img width="200" height="200" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle.jpg?w=200&amp;h=200&amp;crop=1" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle.jpg 1000w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle-150x150.jpg 150w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle-300x300.jpg 300w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/cd_5_angle-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />		<span class="product-title">Woo Album #4</span>
+	</a>
+			<div class="star-rating"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div>		<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>9.00</span></li>
+
+<li>
+	<a href="/storefront/product/ninja-silhouette/">
+		<img width="200" height="200" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front.jpg?w=200&amp;h=200&amp;crop=1" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front.jpg 1000w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front-150x150.jpg 150w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front-300x300.jpg 300w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_5_front-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />		<span class="product-title">Ninja Silhouette</span>
+	</a>
+			<div class="star-rating"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div>		<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>20.00</span></li>
+
+<li>
+	<a href="/storefront/product/happy-ninja/">
+		<img width="200" height="200" src="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front.jpg?w=200&amp;h=200&amp;crop=1" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="//demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front.jpg 1000w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front-150x150.jpg 150w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front-300x300.jpg 300w, //demo.woothemes.com/storefront/wp-content/uploads/sites/78/2013/06/T_7_front-200x200.jpg 200w" sizes="(max-width: 200px) 100vw, 200px" />		<span class="product-title">Happy Ninja</span>
+	</a>
+			<div class="star-rating"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div>		<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>18.00</span></li>
+</ul></div>							</div>
+				</div><!-- .footer-widgets.row-1 -->		<div class="site-info">
+			© [cat-site-name]<br /> [cat-site-name] designed by <a href="http://www.woocommerce.com" title="WooCommerce - The Best eCommerce Platform for WordPress" rel="author">WooCommerce</a>.					</div><!-- .site-info -->
+				<div class="storefront-handheld-footer-bar">
+			<ul class="columns-3">
+									<li class="my-account">
+						<a href="/storefront/my-account/">My Account</a>					</li>
+									<li class="search">
+						<a href="">Search</a>			<div class="site-search">
+				<div class="widget woocommerce widget_product_search"><form role="search" method="get" class="woocommerce-product-search" action="https://demo.woothemes.com/storefront/">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-1">Search for:</label>
+	<input type="search" id="woocommerce-product-search-field-1" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+	<input type="submit" value="Search" />
+	<input type="hidden" name="post_type" value="product" />
+</form>
+</div>			</div>
+							</li>
+									<li class="cart">
+									<a class="footer-cart-contents" href="/storefront/cart/" title="View your shopping cart">
+				<span class="count">0</span>
+			</a>
+							</li>
+							</ul>
+		</div>
+
+		</div><!-- .col-full -->
+	</footer><!-- #colophon -->
+
+
+</div><!-- #page -->
+
+		<script>dataLayer = [{"settings_ga_id":"UA-25052016-1"}]</script>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W64W8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W64W8Q');</script>
+		<p class="woocommerce-store-notice demo_store">This is a demo store for testing purposes &mdash; no orders shall be fulfilled. <a href="#" class="woocommerce-store-notice__dismiss-link">Dismiss</a></p>			<!-- Chained Products Style Start -->
+			<style type="text/css">
+				.chained_item td.product-name {
+					font-size: 0.9em;
+				}
+				.chained_item td.product-name {
+					padding-left: 2em !important;
+				}
+			</style>
+			<!-- Chained Products Style End -->
+			<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@graph":[{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"name":"Home","@id":"https:\/\/demo.woothemes.com\/storefront"}},{"@type":"ListItem","position":"2","item":{"name":"Clothing","@id":"https:\/\/demo.woothemes.com\/storefront\/product-category\/clothing\/"}},{"@type":"ListItem","position":"3","item":{"name":"Hoodies"}}]},{"@context":"https:\/\/schema.org\/","@graph":[{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/checked-hoodie\/","name":"Checked Hoodie","url":"https:\/\/demo.woothemes.com\/storefront\/product\/checked-hoodie\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/woo-logo-2\/","name":"Woo Logo","url":"https:\/\/demo.woothemes.com\/storefront\/product\/woo-logo-2\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/ninja-silhouette-2\/","name":"Ninja Silhouette","url":"https:\/\/demo.woothemes.com\/storefront\/product\/ninja-silhouette-2\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/happy-ninja-2\/","name":"Happy Ninja","url":"https:\/\/demo.woothemes.com\/storefront\/product\/happy-ninja-2\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/patient-ninja\/","name":"Patient Ninja","url":"https:\/\/demo.woothemes.com\/storefront\/product\/patient-ninja\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/woo-ninja-2\/","name":"Woo Ninja","url":"https:\/\/demo.woothemes.com\/storefront\/product\/woo-ninja-2\/"},{"@type":"Product","@id":"https:\/\/demo.woothemes.com\/storefront\/product\/ship-your-idea-2\/","name":"Ship Your Idea","url":"https:\/\/demo.woothemes.com\/storefront\/product\/ship-your-idea-2\/"}]}]}</script><script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/storefront\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/demo.woothemes.com\/storefront\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.woothemes.com\/storefront\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/storefront\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/demo.woothemes.com\/storefront\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/storefront\/wp-admin\/admin-ajax.php","wc_ajax_url":"https:\/\/demo.woothemes.com\/storefront\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_26d03e07af12cd0d10d197f6c8f9b3cc"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_swatches_params = {"ajax_url":"https:\/\/demo.woothemes.com\/storefront\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_price_slider_params = {"currency_format_num_decimals":"0","currency_format_symbol":"\u00a3","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%s%v"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://demo.woothemes.com/storefront/_static/??-eJylk01SwzAMhS+E4sJMBlgwrDkAB3BtJVESW65lN3B7TMpAgBb6s5Otp0+S51lNAQz7hD6pMOaWvKiJ2bBzGA0qLYJJVC+qibPMKm0tJAajY6oc+aqXK3U0pd9kjK+wHtkMmT6O1Xx8fjoDJ0XIA2GJql10OuRzs0X6Asr7w0ATdetKkRwJgq2OpBOxB5l0Mh0KaG8hdJxYFm32ZH/iU4cOizJxxHmqRbnXW2rnPvsG+6tSBgowkh+gYZMFGno5FbF8uA61xfjLReTNmC3u5AHQrdEeyu/Mo4qNTGn2v2oi2+LBbl86x1mOwMlIZYOzv0Cm8ouy6SBkb7r9t6fDtTGcfSLfLsILzBwiFXN+W/XRPVzXq7t6dXN/W/dvn/6c7w=='></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"949ceaf672","applicationID":"14194630","transactionName":"MQZWYhAFXhdYAUBfWwhMdVUWDV8KFhZVTlsIDFlPTxRCC10XV0JrBQJA","queueTime":0,"applicationTime":194,"atts":"HUFBFFgfTUgbAxYMTxse","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
